@@ -1,0 +1,103 @@
+.root {
+    -fx-background-color: white;
+}
+
+.text-field {
+    -fx-text-background-color: white;
+    -fx-fill: white;
+    -fx-alignment: center;
+}
+
+.text-header {
+    -fx-text-background-color: white;
+    -fx-fill: white;
+    -fx-font-weight: bold;
+}
+
+.borderpane {
+    -fx-background-color: white;
+}
+
+.table-view {
+    -fx-table-cell-border-color: transparent;
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: #a5d6a7;
+    -fx-background-radius: 7px 7px 0px 0px;
+    -fx-background-insets: 0 11px 0 0;
+    -fx-padding: 0 0 5px 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-text-background-color: white;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: #a5d6a7;
+}
+
+.table-view .table-cell :filled{
+    -fx-padding: 2 0 2 10px;
+    -fx-border: 1px;
+    -fx-border-color: transparent;
+}
+
+.table-view .table-cell :empty {
+    -fx-border-color: transparent;
+}
+
+.table-row-cell {
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-row-cell: odd:filled{
+    -fx-background-color: white;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+.table-row-cell: even :filled{
+    -fx-background-color: #e8f5e9;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell: empty {
+    -fx-background-color: transparent;
+}
+
+.table-row-cell: hover:filled {
+    -fx-background-color: #1b5e20;
+    -fx-text-background-color: white;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  linear-gradient(to bottom,  #AAAAAA, #DDDDDD);
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to right,  #AAAAAA, #DDDDDD);
+}
+
+.table-row-cell: selected:filled {
+    -fx-background-color: #1b5e20;
+    -fx-text-background-color: white;
+}
+

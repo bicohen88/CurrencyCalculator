@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane styleClass="borderpane" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <VBox style="-fx-background-color: #a5d6a7;" alignment="TOP_CENTER" spacing="5.0">
+            <MenuBar>
+                <menus>
+                    <Menu text="File">
+                        <items>
+                            <MenuItem onAction="#close" text="Exit" />
+                        </items>
+                    </Menu>
+                    <Menu text="Options">
+                        <items>
+                            <MenuItem onAction="#changeBase" text="Change Base Currency" />
+                            <MenuItem onAction="#selectCurrencies" text="Select Currencies" />
+                            <MenuItem onAction="#updateFrequency" text="Change Update Frequency" />
+                            <MenuItem onAction="#updateNow" text="Update Now" />
+                        </items>
+                    </Menu>
+                    <Menu text="Help">
+                        <items>
+                            <MenuItem onAction="#showAbout" text="About" />
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <StackPane styleClass="header-pane">
+                <Text styleClass="text-header" text="Welcome to Currency Calculator">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin></Text>
+            </StackPane>
+        </VBox>
+    </top>
+
+   <center>
+       <VBox alignment="TOP_CENTER">
+           <GridPane hgap="10.0" vgap="10.0">
+               <Text styleClass="text-field" text="Select Base Currency" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+               <Text fx:id="quantityText" styleClass="text-field" text="Quantity" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+               <ComboBox fx:id="defaultCurrency" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+               <TextField fx:id="quantityInput" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <Button fx:id="update" onAction="#updateCurrency" text="Update" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+               <BorderPane.margin>
+                   <Insets left="10.0" top="10.0" />
+               </BorderPane.margin>
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+           </GridPane>
+       <Text fx:id="baseText" styleClass="text-field" text="">
+            <VBox.margin>
+               <Insets bottom="5.0" top="5.0" />
+            </VBox.margin></Text>
+
+       <TableView fx:id="rateList" prefWidth="240.0" BorderPane.alignment="TOP_LEFT">
+           <columns>
+               <TableColumn text="Currency">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="name" />
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn text="Price">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="price" />
+                   </cellValueFactory>
+               </TableColumn>
+               <TableColumn text="Converted">
+                   <cellValueFactory>
+                       <PropertyValueFactory property="converted" />
+                   </cellValueFactory>
+               </TableColumn>
+           </columns>
+       </TableView>
+         <padding>
+            <Insets left="5.0" right="5.0" />
+         </padding>
+       </VBox>
+
+    </center>
+    <bottom>
+        <VBox>
+            <Text styleClass="text-field" text="All data downloaded from exchangeratesapi.io" />
+
+            <Text fx:id="bottomText" styleClass="text-field" text="" />
+        </VBox>
+    </bottom>
+</BorderPane>
